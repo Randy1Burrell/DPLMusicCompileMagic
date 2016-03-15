@@ -76,15 +76,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\source_la_sa\LexicalAnalysis.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\source_la_sa\LexicalAnalysis.cpp" />
-    <ClCompile Include="..\..\..\..\..\Downloads\source_la_sa\Main.cpp" />
+    <ClInclude Include="LexicalAnalysis.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Song.txt" />
     <Text Include="Text_Temp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LexicalAnalysis.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

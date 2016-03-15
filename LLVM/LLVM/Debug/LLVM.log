@@ -1,5 +1,5 @@
 ﻿  Main.cpp
   LexicalAnalysis.cpp
   Generating Code...
-c:\users\campbell\downloads\source_la_sa\lexicalanalysis.cpp(87): warning C4715: 'LexicalAnalysis::lex' : not all control paths return a value
-  LLVM.vcxproj -> c:\users\campbell\documents\visual studio 2012\Projects\LLVM\Debug\LLVM.exe
+c:\users\campbell\documents\visual studio 2012\projects\llvm\llvm\lexicalanalysis.cpp(87): warning C4715: 'LexicalAnalysis::lex' : not all control paths return a value
+  LLVM.vcxproj -> C:\Users\Campbell\Documents\Visual Studio 2012\Projects\LLVM\Debug\LLVM.exe
