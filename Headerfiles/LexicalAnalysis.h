@@ -10,27 +10,29 @@ Lexical Analysis - Interface for the Lexical Analysis class
 
 using namespace std;
 
-enum {
-		DIGIT, 
-		LETTER, 
-		IDENTENTIFIER, 
-		INT_LIT, //integer literal
-		ERROR, 
-		WHITE_SPACE, 
-		STOP, 
-		PLUS, 
-		PERIOD, 
-		COMMA,
-		COLON,
-		LEFT_BRACKET, 
-		RIGHT_BRACKET, 
-		BACK_SLASH, 
-		QUESTION_MARK, 
-		EXCLAMATION_MARK,
-		APOSTRPPHE
+enum 
+{
+	DIGIT, 
+	LETTER, 
+	IDENTENTIFIER, 
+	INT_LIT, //integer literal
+	ERROR, 
+	WHITE_SPACE, 
+	STOP, 
+	PLUS, 
+	PERIOD, 
+	COMMA,
+	COLON,
+	LEFT_BRACKET, 
+	RIGHT_BRACKET, 
+	BACK_SLASH, 
+	QUESTION_MARK, 
+	EXCLAMATION_MARK,
+	APOSTRPPHE
 };
 
-class LexicalAnalysis{
+class LexicalAnalysis
+{
 
 	public:
 		char nextChar;

@@ -26,7 +26,8 @@ int main ()
 	while (std::getline(file, str)){  file_contents += str;}
 	
 	
-	SyntaxAnalysis SA(file_contents); SA.syntax();
+	SyntaxAnalysis SA(file_contents); 
+	SA.syntax();
 	
 	system("pause");
 	return 0;

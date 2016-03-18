@@ -7,19 +7,24 @@ Lexical Analysis - Implementation of the Lexical Analysis class.
 LexicalAnalysis::LexicalAnalysis(string in) : input(in), charClass(ERROR), nextChar(' '), lexeme(""){ getChar(); } 
 LexicalAnalysis::~LexicalAnalysis(){ /**NOTE: KILL ifstream process**/ }
 
-void LexicalAnalysis::setNewInput(string in){
+void LexicalAnalysis::setNewInput(string in)
+{
 	input=in;
 	getChar();
 }
 
-void LexicalAnalysis::getChar(){
-	if (input.size()>0){
+void LexicalAnalysis::getChar()
+{
+	if (input.size()>0)
+	{
 	  nextChar = input[0];
 	  input.erase(0,1);
-	}else 
+	}
+	else
+	{ 
 		nextChar = '$';
 		charClass = ERROR;
-	
+	}
 	//get char/letters base on ascii table values
 	if ( (nextChar > 64 && nextChar <91) || (nextChar > 96 && nextChar <123) ) charClass = LETTER;
 
@@ -39,21 +44,32 @@ void LexicalAnalysis::getChar(){
 	if (nextChar == '!') charClass = EXCLAMATION_MARK;
 }
 
-void LexicalAnalysis::addChar(){ lexeme+=nextChar; }
-int LexicalAnalysis::lex(){
+void LexicalAnalysis::addChar()
+{ 
+	lexeme+=nextChar; 
+}
+int LexicalAnalysis::lex()
+{
 	  
 	lexeme="";
 	while (charClass == WHITE_SPACE) getChar();
 
-	if (charClass == ERROR) {addChar(); getChar(); return ERROR;}
+	if (charClass == ERROR) 
+	{
+		addChar(); 
+		getChar(); 
+		return ERROR;
+	}
+
 	if (charClass == STOP) { return STOP;}
 
-	switch (charClass) {
-		
+	switch (charClass) 
+	{
 		case LETTER:
 			addChar();
 			getChar();
-			while (charClass == LETTER || charClass == DIGIT){
+			while (charClass == LETTER || charClass == DIGIT)
+			{
 				addChar();
 				getChar();
 			}
@@ -63,79 +79,81 @@ int LexicalAnalysis::lex(){
 		case DIGIT: 
 			addChar();
 			getChar();
-			while (charClass == DIGIT) {
+			while (charClass == DIGIT) 
+			{
 				addChar();
 				getChar();
-			  }
-			  return INT_LIT;
-			  break;
+			}
+			return INT_LIT;
+			break;
 		
 		case PLUS:
-		  addChar();
-		  getChar();
-		  return PLUS;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return PLUS;
+		  	break;
 		
 		case COMMA:
-		  addChar();
-		  getChar();
-		  return COMMA;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return COMMA;
+		  	break;
 		
 		case PERIOD:
-		  addChar();
-		  getChar();
-		  return PERIOD;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return PERIOD;
+		  	break;
 
 		case COLON:
-		  addChar();
-		  getChar();
-		  return COLON;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return COLON;
+		  	break;
 
 		case LEFT_BRACKET:
-		  addChar();
-		  getChar();
-		  return LEFT_BRACKET;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return LEFT_BRACKET;
+		  	break;
 
 		case RIGHT_BRACKET:
-		  addChar();
-		  getChar();
-		  return RIGHT_BRACKET;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return RIGHT_BRACKET;
+		  	break;
 
 		case BACK_SLASH:
-		  addChar();
-		  getChar();
-		  return BACK_SLASH;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return BACK_SLASH;
+		  	break;
 
 		case QUESTION_MARK:
-		  addChar();
-		  getChar();
-		  return QUESTION_MARK;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return QUESTION_MARK;
+		  	break;
 
 		case EXCLAMATION_MARK:
-		  addChar();
-		  getChar();
-		  return EXCLAMATION_MARK;
-		  break;
-		  case APOSTRPPHE:
-		  addChar();
-		  getChar();
-		  return APOSTRPPHE;
-		  break;
+		  	addChar();
+		  	getChar();
+		  	return EXCLAMATION_MARK;
+		 	break;
+		case APOSTRPPHE:
+		  	addChar();
+		  	getChar();
+		  	return APOSTRPPHE;
+		  	break;
 	  }//end switch code block
 
 }
 
-string LexicalAnalysis::convertToken(int t) {
+string LexicalAnalysis::convertToken(int t) 
+{
 
-  switch (t) {
-
+  switch (t) 
+  {
     case WHITE_SPACE:  return "WHITE SPACE";
     case LETTER: return "LETTER";
     case DIGIT:  return "DIGIT";	  
